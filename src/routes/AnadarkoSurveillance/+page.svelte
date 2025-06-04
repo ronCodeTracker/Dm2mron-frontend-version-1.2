@@ -28,7 +28,9 @@
 
 */
 
-
+const downloadVideos = () => {};
+const deleteVideo = () => {};
+const uploadVideo = () => {};
 
 
 /*
