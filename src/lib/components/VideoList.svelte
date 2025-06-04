@@ -35,7 +35,17 @@
   {#each videos as video}
     <li class="flex items-center justify-between bg-blue-100 rounded p-3 shadow-sm">
       <div>
-        <span class="font-semibold text-blue-900">{video.name}</span>
+
+         {#if video.name}
+          <span class="font-semibold text-blue-900">{video.name}</span>
+        {:else}
+          <span class="font-semibold text-blue-900">{video.key}</span>
+        {/if}
+
+
+
+
+        <!--<span class="font-semibold text-blue-900">{video.name}</span>-->
         {#if video.category}
           <span class="ml-2 text-blue-600 text-sm">({video.category})</span>
         {/if}
