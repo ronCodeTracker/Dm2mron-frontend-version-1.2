@@ -14,7 +14,10 @@
 
   
   onMount(async () => {
-    const response = await fetch('https://allenskywolf.com/api/videos');
+    const response = await fetch('https://allenskywolf.com/api/videos', {
+    mode: 'cors'
+
+    });
     videos = await response.json();
   });
 
