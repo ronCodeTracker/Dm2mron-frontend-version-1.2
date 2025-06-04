@@ -6,14 +6,27 @@
   import VideoList from '$lib/components/VideoList.svelte';
 
   let videos = [];
-  let selectedOption = 'firstFive';
+  let selectedOption = '';
   let videoKeyToDelete = '';
   let fileToUpload = null;
 
+
+
+  
   onMount(async () => {
     const response = await fetch('https://allenskywolf.com/api/videos');
     videos = await response.json();
   });
+
+
+// Use dummy data for testing
+/*
+  let videos = [
+    { key: 'test1', name: 'Test Video 1', category: 'Demo' },
+    { key: 'test2', name: 'Test Video 2', category: 'Demo' }
+  ];
+
+*/
 
   const downloadVideos = async () => {
     let url = 'https://allenskywolf.com/api/download?';
