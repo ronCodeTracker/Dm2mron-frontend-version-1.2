@@ -28,6 +28,10 @@
 
 */
 
+
+
+
+/*
   const downloadVideos = async () => {
     let url = 'https://allenskywolf.com/api/download?';
     if (selectedOption === 'firstFive') {
@@ -39,7 +43,10 @@
     }
     window.open(url, '_blank');
   };
+*/
 
+
+  /*
   const deleteVideo = async () => {
     if (videoKeyToDelete) {
       await fetch(`https://allenskywolf.com/api/videos/${videoKeyToDelete}`, {
@@ -61,6 +68,10 @@
       fileToUpload = null;
     }
   };
+
+*/
+
+
 </script>
 
 <div class="min-h-screen bg-gray-100 p-6">

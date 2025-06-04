@@ -18,10 +18,17 @@
     }, 800); // Simulate loading
   }
 
+
+
+/*
   function downloadVideo(key) {
     // Replace with your actual download URL
     window.open(`https://allenskywolf.com/api/videos/${key}/download`, '_blank');
   }
+
+*/
+
+
 </script>
 
 <ul class="space-y-3 mb-8">
