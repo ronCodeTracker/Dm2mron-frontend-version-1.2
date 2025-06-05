@@ -13,7 +13,7 @@
     console.log('viewVideo');
     loadingVideo = true;
     // Replace with your actual video streaming/playback URL
-    selectedVideo = `https://allenskywolf.com/api/videos/${key}/stream`;
+    selectedVideo = `https://allenskywolf.com/api/videos/stream/${key}`;
     setTimeout(() => {
       loadingVideo = false;
     }, 800); // Simulate loading
