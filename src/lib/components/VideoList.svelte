@@ -10,6 +10,7 @@
 
   // Assumes video.key is the unique identifier and video.name is the display name
   function viewVideo(key) {
+    console.log('viewVideo');
     loadingVideo = true;
     // Replace with your actual video streaming/playback URL
     selectedVideo = `https://allenskywolf.com/api/videos/${key}/stream`;
