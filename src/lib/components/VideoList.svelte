@@ -8,7 +8,26 @@
   let selectedVideo = null;
   let loadingVideo = false;
 
+
+
+
+function viewVideo(key) {
+  loadingVideo = true;
+  // Use the direct download URL as the video source
+  selectedVideo = `https://allenskywolf.com/api/videos/download/${key}`;
+  setTimeout(() => {
+    loadingVideo = false;
+  }, 800); // Simulate loading
+}
+
+
+
+
+
+  
   // Assumes video.key is the unique identifier and video.name is the display name
+  
+  /*
   function viewVideo(key) {
     console.log('viewVideo');
     loadingVideo = true;
@@ -19,7 +38,7 @@
     }, 800); // Simulate loading
   }
 
-
+*/
 
 /*
   function downloadVideo(key) {
