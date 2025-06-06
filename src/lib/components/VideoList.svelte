@@ -3,6 +3,10 @@
 
 
 <script>
+
+  import { createEventDispatcher } from 'svelte';
+  const dispatch = createEventDispatcher();
+
   export let videos = [];
 
   let selectedVideo = null;
