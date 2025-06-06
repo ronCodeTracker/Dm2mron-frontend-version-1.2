@@ -23,6 +23,8 @@ function viewVideo(key) {
   }, 800); // Simulate loading
 }
 
+
+
 function handleDelete(key) {
     dispatch('delete', { key });
   }
