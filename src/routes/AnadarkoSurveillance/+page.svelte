@@ -59,7 +59,7 @@ const uploadVideo = () => {};
 */
 
 
-  
+/*  
   const deleteVideo = async () => {
     if (videoKeyToDelete) {
       await fetch(`https://allenskywolf.com/api/videos/${videoKeyToDelete}`, {
@@ -69,11 +69,11 @@ const uploadVideo = () => {};
       videoKeyToDelete = '';
     }
   };
-
+*/
 
 
   async function deleteVideoByKey(key) {
-  await fetch(`https://allenskywolf.com/api/videos/${encodeURIComponent(key)}`, {
+  await fetch(`https://allenskywolf.com/api/videos/delete/${encodeURIComponent(key)}`, {
     method: 'DELETE'
   });
   videos = videos.filter(video => video.key !== key);
