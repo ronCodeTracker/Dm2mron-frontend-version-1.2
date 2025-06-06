@@ -13,7 +13,7 @@
 
 function viewVideo(key) {
   console.log('viewVideo');
-  console.log(key);
+  console.log("key: " + key);
   key = "DaronredoSM2.mp4"
   loadingVideo = true;
   // Use the direct download URL as the video source
