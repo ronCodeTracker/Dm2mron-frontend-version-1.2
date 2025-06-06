@@ -85,6 +85,9 @@ const uploadVideo = () => {};
   };
 */
 
+ hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+        });
 
 
 </script>
