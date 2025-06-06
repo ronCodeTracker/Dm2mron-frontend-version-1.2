@@ -105,7 +105,7 @@ const uploadVideo = () => {};
             </svg>
         </button>
         {#if navOpen}
-        <nav id="nav-menu" class="hidden flex-col items-end mt-4 bg-black/70 rounded-lg p-4 shadow-lg">
+        <nav id="nav-menu" class="flex-col items-end mt-4 bg-black/70 rounded-lg p-4 shadow-lg">
             <a href="/SearchandRescue" class="nav-link text-white py-2 px-4 rounded hover:bg-amber-400/80 hover:text-black transition">Search and Rescue</a>
             <a href="/AnadarkoSurveillance" class="nav-link text-white py-2 px-4 rounded hover:bg-amber-400/80 hover:text-black transition">Anadarko Surveillance</a>
             <a href="/Delete" class="nav-link text-white py-2 px-4 rounded hover:bg-amber-400/80 hover:text-black transition">Delete</a>
