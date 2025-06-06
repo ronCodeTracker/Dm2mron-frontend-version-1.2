@@ -17,7 +17,7 @@ function viewVideo(key) {
   //key = "DaronredoSM2.mp4"
   loadingVideo = true;
   // Use the direct download URL as the video source
-  selectedVideo = `https://allenskywolf.com/api/download/${key}`;
+  selectedVideo = `https://allenskywolf.com/api/download/${encodeURIComponent(key)}`;
   setTimeout(() => {
     loadingVideo = false;
   }, 800); // Simulate loading
