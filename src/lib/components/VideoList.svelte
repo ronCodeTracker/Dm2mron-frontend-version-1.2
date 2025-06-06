@@ -23,7 +23,9 @@ function viewVideo(key) {
   }, 800); // Simulate loading
 }
 
-
+function handleDelete(key) {
+    dispatch('delete', { key });
+  }
 
 
 
@@ -74,6 +76,8 @@ function viewVideo(key) {
         {/if}
       </div>
       <div class="flex gap-2">
+
+
         <button
           on:click={() => viewVideo(video.key)}
           class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 rounded transition"
@@ -85,6 +89,12 @@ function viewVideo(key) {
           class="bg-green-500 hover:bg-green-600 text-white px-4 py-1 rounded transition"
         >
           Download
+        </button>
+        <button
+          on:click={() => handleDelete(video.key)}
+          class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded transition"
+        >
+          Delete
         </button>
       </div>
     </li>

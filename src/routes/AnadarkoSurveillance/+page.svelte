@@ -40,7 +40,7 @@
 */
 
 const downloadVideos = () => {};
-const deleteVideo = () => {};
+//const deleteVideo = () => {};
 const uploadVideo = () => {};
 
 
@@ -59,7 +59,7 @@ const uploadVideo = () => {};
 */
 
 
-  /*
+  
   const deleteVideo = async () => {
     if (videoKeyToDelete) {
       await fetch(`https://allenskywolf.com/api/videos/${videoKeyToDelete}`, {
@@ -70,6 +70,19 @@ const uploadVideo = () => {};
     }
   };
 
+
+
+  async function deleteVideoByKey(key) {
+  await fetch(`https://allenskywolf.com/api/videos/${encodeURIComponent(key)}`, {
+    method: 'DELETE'
+  });
+  videos = videos.filter(video => video.key !== key);
+}
+
+
+
+
+  /*
   const uploadVideo = async () => {
     if (fileToUpload) {
       const formData = new FormData();
@@ -81,8 +94,8 @@ const uploadVideo = () => {};
       fileToUpload = null;
     }
   };
-
 */
+
 
 
 </script>
@@ -122,7 +135,7 @@ const uploadVideo = () => {};
       <button on:click={uploadVideo} class="mt-2 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Upload</button>
     </div>
 
-    <VideoList videos={filteredVideos} />
+   <VideoList videos={filteredVideos} on:delete={e => deleteVideoByKey(e.detail.key)} />
   </div>
 </div>
 
