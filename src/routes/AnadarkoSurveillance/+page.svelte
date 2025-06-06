@@ -40,7 +40,7 @@
 */
 
 const downloadVideos = () => {};
-const deleteVideo = () => {};
+//const deleteVideo = () => {};
 const uploadVideo = () => {};
 
 
@@ -59,17 +59,6 @@ const uploadVideo = () => {};
 */
 
 
-/*  
-  const deleteVideo = async () => {
-    if (videoKeyToDelete) {
-      await fetch(`https://allenskywolf.com/api/videos/${videoKeyToDelete}`, {
-        method: 'DELETE',
-      });
-      videos = videos.filter(video => video.key !== videoKeyToDelete);
-      videoKeyToDelete = '';
-    }
-  };
-*/
 
 
   async function deleteVideoByKey(key) {
@@ -123,11 +112,7 @@ const uploadVideo = () => {};
 
     
 
-    <div class="mt-6 mb-4">
-      <label for="videoKey" class="block text-gray-700">Delete Video by Key:</label>
-      <input id="videoKey" type="text" bind:value={videoKeyToDelete} class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" placeholder="Enter video key" />
-      <button on:click={deleteVideo} class="mt-2 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Delete</button>
-    </div>
+    
 
     <div class="mt-6 mb-4">
       <label for="videoUpload" class="block text-gray-700">Upload MP4 Video:</label>
