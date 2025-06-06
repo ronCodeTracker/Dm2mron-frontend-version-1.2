@@ -6,7 +6,7 @@
   import VideoList from '$lib/components/VideoList.svelte';
 
   let videos = [];
-  let selectedOption = '';
+  let selectedOption = '5';
   let videoKeyToDelete = '';
   let fileToUpload = null;
 
@@ -20,6 +20,14 @@
     });
     videos = await response.json();
   });
+
+
+
+ // Compute the filtered videos based on selection
+  $: filteredVideos = selectedOption === 'all'
+    ? videos
+    : videos.slice(0, Number(selectedOption));
+
 
 
 // Use dummy data for testing
@@ -87,16 +95,16 @@ const uploadVideo = () => {};
   <div class="bg-white rounded-lg shadow p-6">
     <h2 class="text-xl font-semibold mb-4">Manage Videos</h2>
 
-    <div class="mb-4">
-      <label for="videoSelect" class="block text-gray-700">Download Videos:</label>
+     <div class="mb-4">
+      <label for="videoSelect" class="block text-gray-700">Show Videos:</label>
       <select id="videoSelect" bind:value={selectedOption} class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
-        <option value="firstFive">First Five Videos</option>
-        <option value="lastFive">Last Five Videos</option>
+        <option value="5">First 5 Videos</option>
+        <option value="10">First 10 Videos</option>
         <option value="all">All Videos</option>
       </select>
     </div>
 
-    <button on:click={downloadVideos} class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Download</button>
+    
 
     <div class="mt-6 mb-4">
       <label for="videoKey" class="block text-gray-700">Delete Video by Key:</label>
@@ -110,7 +118,7 @@ const uploadVideo = () => {};
       <button on:click={uploadVideo} class="mt-2 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Upload</button>
     </div>
 
-    <VideoList {videos} />
+    <VideoList videos={filteredVideos} />
   </div>
 </div>
 
