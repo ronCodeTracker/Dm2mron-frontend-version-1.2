@@ -95,6 +95,10 @@ const uploadVideo = () => {};
   <div class="bg-white rounded-lg shadow p-6">
     <h2 class="text-xl font-semibold mb-4">Manage Videos</h2>
 
+   <!-- Add this just above the dropdown in your markup -->
+   <div class="w-full h-2 rounded bg-blue-400 mb-4"></div>
+
+
      <div class="mb-4">
       <label for="videoSelect" class="block text-gray-700">Show Videos:</label>
       <select id="videoSelect" bind:value={selectedOption} class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
