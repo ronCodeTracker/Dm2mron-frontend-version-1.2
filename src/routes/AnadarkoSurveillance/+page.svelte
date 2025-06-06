@@ -40,7 +40,7 @@
 */
 
 const downloadVideos = () => {};
-//const deleteVideo = () => {};
+const deleteVideo = () => {};
 const uploadVideo = () => {};
 
 
