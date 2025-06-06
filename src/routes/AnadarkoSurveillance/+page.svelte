@@ -111,7 +111,7 @@ const uploadVideo = () => {};
             <a href="/AnadarkoSurveillance" class="nav-link text-white py-2 px-4 rounded hover:bg-amber-400/80 hover:text-black transition">Anadarko Surveillance</a>
             <a href="/Delete" class="nav-link text-white py-2 px-4 rounded hover:bg-amber-400/80 hover:text-black transition">Delete</a>
             <a href="/" class="nav-link text-white py-2 px-4 rounded hover:bg-amber-400/80 hover:text-black transition">Link 4</a>
-            <a href="/" class="nav-link text-white py-2 px-4 rounded hover:bg-amber-400/80 hover:text-black transition">Link 5</a>
+            
         </nav>
         {/if}
     </div>
