@@ -12,9 +12,10 @@
 
 
 function viewVideo(key) {
+  console.log('viewVideo');
   loadingVideo = true;
   // Use the direct download URL as the video source
-  selectedVideo = `https://allenskywolf.com/api/videos/download/${key}`;
+  selectedVideo = `https://allenskywolf.com/api/videos/download`;
   setTimeout(() => {
     loadingVideo = false;
   }, 800); // Simulate loading
