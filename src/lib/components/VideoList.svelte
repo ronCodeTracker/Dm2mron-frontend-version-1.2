@@ -9,6 +9,8 @@
 
   export let videos = [];
 
+  let uploadFile = null;
+
   let selectedVideo = null;
   let loadingVideo = false;
 
@@ -37,6 +39,9 @@ function handleDelete(key) {
 function handleDownload(key) {
     dispatch('download', { key });
   }
+
+
+
 
 
   

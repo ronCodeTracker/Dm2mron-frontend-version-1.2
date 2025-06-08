@@ -39,24 +39,10 @@
 
 */
 
-const downloadVideos = () => {};
-//const deleteVideo = () => {};
+
 const uploadVideo = () => {};
 
 
-/*
-  const downloadVideos = async () => {
-    let url = 'https://allenskywolf.com/api/download?';
-    if (selectedOption === 'firstFive') {
-      url += 'count=5';
-    } else if (selectedOption === 'lastFive') {
-      url += 'count=-5';
-    } else {
-      url += 'count=all';
-    }
-    window.open(url, '_blank');
-  };
-*/
 
 
 
@@ -102,9 +88,23 @@ a.download = key; // or use a better filename if available
     }
   };
 */
-
+async function uploadVideoByFile(file) {
+    if (file) {
+      const formData = new FormData();
+      formData.append('file', file);
+      const response = await fetch('https://allenskywolf.com/api/upload', {
+        method: 'POST',
+        body: formData,
+      });
  
-
+  if (response.ok) {
+          // Optionally refresh the video list here
+          alert('Upload successful!');
+        } else {
+          alert('Upload failed.');
+        }
+      }
+  }
 
 </script>
 
@@ -159,7 +159,7 @@ a.download = key; // or use a better filename if available
     <div class="mt-6 mb-4">
       <label for="videoUpload" class="block text-gray-700">Upload MP4 Video:</label>
       <input id="videoUpload" type="file" accept="video/mp4" on:change={e => fileToUpload = e.target.files[0]} class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" />
-      <button on:click={uploadVideo} class="mt-2 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Upload</button>
+      <button on:click={uploadVideoByFile(fileToUpload)} class="mt-2 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Upload</button>
     </div>
 
    <VideoList videos={filteredVideos} 
