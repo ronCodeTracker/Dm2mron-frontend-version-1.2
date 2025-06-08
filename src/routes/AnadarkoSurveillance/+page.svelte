@@ -12,7 +12,9 @@
 
   let navOpen = false;
 
-  
+  let uploading = false;
+
+
   onMount(async () => {
     const response = await fetch('https://allenskywolf.com/api/videos', {
     mode: 'cors'
@@ -91,13 +93,14 @@ a.download = key; // or use a better filename if available
 async function uploadVideoByFile(file) {
   console.log("upload started");
     if (file) {
+      uploading = true;
       const formData = new FormData();
       formData.append('file', file);
       const response = await fetch('https://allenskywolf.com/api/upload', {
         method: 'POST',
         body: formData,
       });
- 
+ uploading =  false;
   if (response.ok) {
           // Optionally refresh the video list here
           alert('Upload successful!');
@@ -162,6 +165,9 @@ async function uploadVideoByFile(file) {
       <input id="videoUpload" type="file" accept="video/mp4" on:change={e => fileToUpload = e.target.files[0]} class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" />
       <button on:click={() => uploadVideoByFile(fileToUpload)} class="mt-2 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Upload</button>
     </div>
+    {#if uploading}
+    <span class="ml-2 text-blue-600 animate-pulse">Uploading...</span>
+    {/if}
 
    <VideoList videos={filteredVideos} 
    on:delete={e => deleteVideoByKey(e.detail.key)}
