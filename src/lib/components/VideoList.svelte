@@ -34,6 +34,10 @@ function handleDelete(key) {
   }
 
 
+function handleDownload(key) {
+    dispatch('download', { key });
+  }
+
 
   
   // Assumes video.key is the unique identifier and video.name is the display name
@@ -91,7 +95,7 @@ function handleDelete(key) {
           View
         </button>
         <button
-          on:click={() => downloadVideo(video.key)}
+         on:click={() => handleDownload(video.key)}
           class="bg-green-500 hover:bg-green-600 text-white px-4 py-1 rounded transition"
         >
           Download

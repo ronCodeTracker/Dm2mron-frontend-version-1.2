@@ -71,6 +71,24 @@ const uploadVideo = () => {};
 
 
 
+async function downloadVideoByKey(key) {
+    const response = await fetch(`https://allenskywolf.com/api/download/${encodeURIComponent(key)}`);
+    if (response.ok) {
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+a.download = key; // or use a better filename if available
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      window.URL.revokeObjectURL(url);
+    } else {
+      alert('Download failed.');
+    }
+  }
+
+
   /*
   const uploadVideo = async () => {
     if (fileToUpload) {
@@ -144,7 +162,10 @@ const uploadVideo = () => {};
       <button on:click={uploadVideo} class="mt-2 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Upload</button>
     </div>
 
-   <VideoList videos={filteredVideos} on:delete={e => deleteVideoByKey(e.detail.key)} />
+   <VideoList videos={filteredVideos} 
+   on:delete={e => deleteVideoByKey(e.detail.key)}
+   on:download={e => downloadVideoByKey(e.detail.key)}
+   />
   </div>
 </div>
 
