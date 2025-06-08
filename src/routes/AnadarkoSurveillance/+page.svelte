@@ -89,6 +89,7 @@ a.download = key; // or use a better filename if available
   };
 */
 async function uploadVideoByFile(file) {
+  console.log("upload started");
     if (file) {
       const formData = new FormData();
       formData.append('file', file);
@@ -159,7 +160,7 @@ async function uploadVideoByFile(file) {
     <div class="mt-6 mb-4">
       <label for="videoUpload" class="block text-gray-700">Upload MP4 Video:</label>
       <input id="videoUpload" type="file" accept="video/mp4" on:change={e => fileToUpload = e.target.files[0]} class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" />
-      <button on:click={uploadVideoByFile(fileToUpload)} class="mt-2 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Upload</button>
+      <button on:click={() => uploadVideoByFile(fileToUpload)} class="mt-2 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Upload</button>
     </div>
 
    <VideoList videos={filteredVideos} 
