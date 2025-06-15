@@ -112,6 +112,14 @@ async function uploadVideoByFile(file) {
 
 </script>
 
+
+<style>
+
+@import './mystyle.css';
+
+</style>
+
+
 <div class="min-h-screen bg-gray-100 p-6">
   <nav class="bg-white shadow mb-6 p-4">
     <h1 class="text-2xl font-bold text-gray-800">Anadarko Surveillance</h1>
@@ -132,13 +140,13 @@ async function uploadVideoByFile(file) {
             <a href="/SearchandRescue" class="nav-link text-white py-2 px-4 rounded hover:bg-amber-400/80 hover:text-black transition">Search and Rescue</a>
             <a href="/AnadarkoSurveillance" class="nav-link text-white py-2 px-4 rounded hover:bg-amber-400/80 hover:text-black transition">Anadarko Surveillance</a>
             <a href="/" class="nav-link text-white py-2 px-4 rounded hover:bg-amber-400/80 hover:text-black transition">Link</a>
-            <a href="/" class="nav-link text-white py-2 px-4 rounded hover:bg-amber-400/80 hover:text-black transition">Link 4</a>
+            <a href="/" class="nav-link text-white py-2 px-4 rounded hover:bg-amber-400/80 hover:text-black transition">Link</a>
             
         </nav>
         {/if}
     </div>
 
-
+   <!-- <link rel="stylesheet" href="./mystyle.css"/> -->
 
   <div class="bg-white rounded-lg shadow p-6">
     <h2 class="text-xl font-semibold mb-4">Manage Videos</h2>
@@ -168,6 +176,8 @@ async function uploadVideoByFile(file) {
     {#if uploading}
     <span class="ml-2 text-blue-600 animate-pulse">Uploading...</span>
     {/if}
+
+    <span class="spn1" ></span>
 
    <VideoList videos={filteredVideos} 
    on:delete={e => deleteVideoByKey(e.detail.key)}
