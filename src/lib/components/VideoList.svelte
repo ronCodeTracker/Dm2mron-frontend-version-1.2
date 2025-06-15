@@ -71,43 +71,35 @@ function handleDownload(key) {
 
 </script>
 
-<ul class="space-y-3 mb-8">
+<ul class="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
   {#each videos as video}
-    <li class="flex items-center justify-between bg-blue-100 rounded p-3 shadow-sm">
-      <div>
-
-         {#if video.name}
-          <span class="font-semibold text-blue-900">{video.name}</span>
+    <li class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-blue-100 rounded p-2 sm:p-3 shadow-sm gap-2">
+      <div class="w-full sm:w-auto">
+        {#if video.name}
+          <span class="font-semibold text-blue-900 text-base sm:text-lg">{video.name}</span>
         {:else}
-          <span class="font-semibold text-blue-900">{video.key}</span>
+          <span class="font-semibold text-blue-900 text-base sm:text-lg">{video.key}</span>
         {/if}
-
-
-
-
-        <!--<span class="font-semibold text-blue-900">{video.name}</span>-->
         {#if video.category}
-          <span class="ml-2 text-blue-600 text-sm">({video.category})</span>
+          <span class="ml-1 sm:ml-2 text-blue-600 text-xs sm:text-sm">({video.category})</span>
         {/if}
       </div>
-      <div class="flex gap-2">
-
-
+      <div class="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
         <button
           on:click={() => viewVideo(video.key)}
-          class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 rounded transition"
+          class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-2 rounded transition text-sm w-full sm:w-auto"
         >
           View
         </button>
         <button
          on:click={() => handleDownload(video.key)}
-          class="bg-green-500 hover:bg-green-600 text-white px-4 py-1 rounded transition"
+          class="bg-green-500 hover:bg-green-600 text-white px-3 py-2 rounded transition text-sm w-full sm:w-auto"
         >
           Download
         </button>
         <button
           on:click={() => handleDelete(video.key)}
-          class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded transition"
+          class="bg-red-500 hover:bg-red-600 text-white px-3 py-2 rounded transition text-sm w-full sm:w-auto"
         >
           Delete
         </button>
