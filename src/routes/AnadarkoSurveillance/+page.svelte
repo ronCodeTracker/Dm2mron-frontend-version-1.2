@@ -115,7 +115,7 @@ async function uploadVideoByFile(file) {
 
 <style>
 
-@import './mystyle.css';
+     @import './mystyle.css';
 
 </style>
 
@@ -178,7 +178,7 @@ async function uploadVideoByFile(file) {
     {/if}
 
     <span class="spn1" ></span>
-
+    <div class="spn1"></div>
    <VideoList videos={filteredVideos} 
    on:delete={e => deleteVideoByKey(e.detail.key)}
    on:download={e => downloadVideoByKey(e.detail.key)}
