@@ -177,7 +177,7 @@ async function uploadVideoByFile(file) {
     <span class="ml-2 text-blue-600 animate-pulse">Uploading...</span>
     {/if}
 
-    <span class="spn1" ></span>
+    
     <div class="spn1"></div>
    <VideoList videos={filteredVideos} 
    on:delete={e => deleteVideoByKey(e.detail.key)}
